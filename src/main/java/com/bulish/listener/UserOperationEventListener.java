@@ -13,7 +13,6 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @RequiredArgsConstructor
 public class UserOperationEventListener {
-
     private final ObjectMapper objectMapper;
     private final UserNotificationService notificationService;
 
@@ -22,7 +21,6 @@ public class UserOperationEventListener {
             groupId = "${kafka.consumer.group-id:user-group}")
     public void userOperationListener(@Payload String message) {
         try {
-            System.out.println(message);
             UserOperationEvent event = objectMapper.readValue(message, UserOperationEvent.class);
             log.info("Received event: {}", event);
             notificationService.sendNotification(event);

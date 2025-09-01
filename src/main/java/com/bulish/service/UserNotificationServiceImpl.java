@@ -13,7 +13,6 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 public class UserNotificationServiceImpl implements UserNotificationService {
-
     private final EmailService emailService;
     private final List<NotificationStrategy> strategies;
 
