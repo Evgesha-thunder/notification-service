@@ -9,6 +9,6 @@ FROM eclipse-temurin:21-jre-alpine
 
 WORKDIR /app
 
-COPY --from=build /app/target/user-service-*.jar /app/app.jar
+COPY --from=build /app/target/notification-service-*.jar /app/app.jar
 EXPOSE 8081
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
